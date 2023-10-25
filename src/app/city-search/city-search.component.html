@@ -1,0 +1,16 @@
+<div class="city-search">
+  <input
+    type="text"
+    placeholder="Enter a city name"
+    [(ngModel)]="searchTerm"
+    (input)="onInputChange()"
+    (focus)="onInputFocus()"
+    (blur)="onInputBlur()"
+  />
+  <ul *ngIf="isInputFocused && suggestions.length > 0">
+    <li *ngFor="let suggestion of suggestions" (click)="onSuggestionClick(suggestion)">{{ suggestion }}</li>
+  </ul>
+</div>
+
+
+
